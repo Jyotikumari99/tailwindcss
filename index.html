@@ -13,36 +13,23 @@
   <script>
     tailwind.config = {
       theme: {
-        screens: {
-      'sm': '567px',
-      // => @media (min-width: 540px) { ... } css will be applied sm is 540
-
-      'md': '768px',
-      // => @media (min-width: 768px) { ... }
-
-      'lg': '1024px',
-      // => @media (min-width: 1024px) { ... }
-
-      'xl': '1280px',
-      // => @media (min-width: 1280px) { ... }
-
-      '2xl': '1536px',
-      // => @media (min-width: 1536px) { ... }
-    },
         extend: {
-          screens: {
-      'xs': {'min':'320px','max':'567px'},
-    },
           colors: {
             // clifford: '#da373d',
-            wordcolor:"#da373d"
+            wordcolor: "#da373d",
+            'white': '#ffffff',
+            'purple': '#3f3cbb',
+            'midnight': '#121063',
+            'metal': '#565584',
+            'tahiti': '#3ab7bf',
+            'silver': '#ecebff',
+            'bubble-gum': '#ff77e9',
+            'bermuda': '#78dcca',
           }
         }
       }
     }
-
-
-  </script>
+</script>
 </head>
 
 <body>
@@ -53,15 +40,31 @@
   <!-- breakpoint & customizing screens
   if it is geiven lg then it will work for all xl and 2xl as well   lg ke upar same kam karega neeche me nhi karega
   <h1 class="text-3xl lg:text-center text-wordcolor ">Welcome to tailwind</h1>  -->
-  
+
 
   <!-- <h1 class="text-3xl xl:text-left lg:text-center text-wordcolor">Welcome to  tialwindcss</h1> -->
   <!-- xl ke liye left me ajyegi -->
 
 
-  <h1 class="text-3xl sm:text-center lg:text-center py-5 lg:py-10 text-wordcolor xs:text-right">Welcome to  tialwindcss</h1>
-  <!-- 640 se km wali screen me sm kam nh krega usse upar wli me hi kam karega  lg ki screnn ya use upar ali me 10 padding an default me ya lg se neeche wali me 5 padding hoga -->
-  
+  <!-- <h1 class="text-3xl sm:text-center lg:text-center py-5 lg:py-10 text-wordcolor xs:text-right">Welcome to  tialwindcss</h1>
+  640 se km wali screen me sm kam nh krega usse upar wli me hi kam karega  lg ki screnn ya use upar ali me 10 padding an default me ya lg se neeche wali me 5 padding hoga -->
+
+
+  <!-- container class -->
+  <!-- <div class="container bg-red-900 mx-auto">
+     <h1 >strating container class </h1>
+  </div> -->
+
+
+  <!-- text color css -->
+  <div class="container bg-yellow-400 mx-auto">
+    <h1 class="text-[#0a2134]">strating container class </h1>
+    <h1 class="text-[blue]">adding custom colors </h1>
+    <h1 class="text-green">adding custom colors </h1>
+    <!-- dont work if color is in theme works only if color is added in extend -->
+    <h1 class="text-white">adding custom colors in extend </h1>
+    
+  </div>
 </body>
 
 </html>
