@@ -13,6 +13,37 @@
   <script>
     tailwind.config = {
       theme: {
+        colors: {
+          transparent: 'transparent',
+          current: 'currentColor',
+          'white': '#ffffff',
+          'purple': '#3f3cbb',
+          'midnight': '#121063',
+          'metal': '#565584',
+          'tahiti': '#3ab7bf',
+          'silver': '#ecebff',
+          'bubble-gum': '#ff77e9',
+          'bermuda': '#78dcca',
+        },
+        screens: {
+          'sm': '567px',
+          // => @media (min-width: 540px) { ... } css will be applied sm is 540
+
+          'md': '768px',
+          // => @media (min-width: 768px) { ... }
+
+          'lg': '1024px',
+          // => @media (min-width: 1024px) { ... }
+
+          'xl': '1280px',
+          // => @media (min-width: 1280px) { ... }
+
+          '2xl': '1536px',
+          // => @media (min-width: 1536px) { ... }
+        },
+
+
+
         extend: {
           colors: {
             // clifford: '#da373d',
@@ -30,6 +61,29 @@
       }
     }
 </script>
+<style>
+  .one{
+     border-radius:8px;
+     height: 35px;
+     text-align: center;
+     box-shadow: 5px 5px 5px rgb(246, 99, 219) ;
+     color: rgb(225, 60, 230);
+  }
+  .outer-box{
+    width: 60px;
+    height: 20px;
+    background-color: black;
+    border-radius: 5px;
+  }
+  .inner-box{
+    width :50px;
+    height: 10px;
+    background-color: rgb(255, 16, 240);
+   
+     padding-top: 15px;
+     border-radius: 5px;
+  }
+</style>
 </head>
 
 <body>
@@ -57,14 +111,84 @@
 
 
   <!-- text color css -->
-  <div class="container bg-yellow-400 mx-auto">
+  <!-- <div class="container bg-yellow-400 mx-auto">
     <h1 class="text-[#0a2134]">strating container class </h1>
     <h1 class="text-[blue]">adding custom colors </h1>
     <h1 class="text-green">adding custom colors </h1>
-    <!-- dont work if color is in theme works only if color is added in extend -->
+    dont work if color is in theme works only if color is added in extend 
     <h1 class="text-white">adding custom colors in extend </h1>
-    
-  </div>
+     -->
+
+
+       <!-- grid -->
+       <div class="max-w-[1200px] py-10 bg-yellow text-white mx-auto grid lg:grid-cols-4 md:grid-cols-2  sm:grid-cols-2 gap-5"> <!-- max width is 1200px it will be mobile width so it is respnsive  min it can vary-->
+       
+       <div class="bg-[green] py-5 text-center">1.You can also use variant modifiers to target media queries like responsive breakpoints, dark mode, prefers-reduced-motion, and more. For example, use md:grid-cols-6 to apply the grid-cols-6 utility at only medium screen sizes and above.</div>
+       <div class="bg-[green] py-5 text-center">2.You can also use variant modifiers to target media queries like responsive breakpoints, dark mode, prefers-reduced-motion, and more. For example, use md:grid-cols-6 to apply the grid-cols-6 utility at only medium screen sizes and above.</div>
+       <div class="bg-[green] py-5 text-center">3.You can also use variant modifiers to target media queries like responsive breakpoints, dark mode, prefers-reduced-motion, and more. For example, use md:grid-cols-6 to apply the grid-cols-6 utility at only medium screen sizes and above.</div>
+       <div class="bg-[green] py-5 text-center">4ou can also use variant modifiers to target media queries like responsive breakpoints, dark mode, prefers-reduced-motion, and more. For example, use md:grid-cols-6 to apply the grid-cols-6 utility at only medium screen sizes and above.</div>
+       <div class="bg-[green] py-5 text-center">5.You can also use variant modifiers to target media queries like responsive breakpoints, dark mode, prefers-reduced-motion, and more. For example, use md:grid-cols-6 to apply the grid-cols-6 utility at only medium screen sizes and above.</div>
+       <div class="bg-[green] py-5 text-center">6.You can also use variant modifiers to target media queries like responsive breakpoints, dark mode, prefers-reduced-motion, and more. For example, use md:grid-cols-6 to apply the grid-cols-6 utility at only medium screen sizes and above.</div>
+       <div class="bg-[green] py-5 text-center">7.You can also use variant modifiers to target media queries like responsive breakpoints, dark mode, prefers-reduced-motion, and more. For example, use md:grid-cols-6 to apply the grid-cols-6 utility at only medium screen sizes and above.</div>
+       <div class="bg-[green] py-5 text-center">8.You can also use variant modifiers to target media queries like responsive breakpoints, dark mode, prefers-reduced-motion, and more. For example, use md:grid-cols-6 to apply the grid-cols-6 utility at only medium screen sizes and above.</div>
+      </div>
+  
+
+      <!-- css grid in column form  grid template -->
+      <div class="max-w-[1320px] grid grid-rows-3 mx-auto  grid-flow-col gap-6"><!--row=4 divide into 4 rows-->
+        <div class="bg-[green] py-5 text-center">1</div>
+        <div class="bg-[green] py-5 text-center row-start-1 row-end-3 ">2</div>
+        <div class="bg-[green] py-5 text-center row-span-3">3</div><!--takes length equal to 2 rows-->
+        <div class="bg-[green] py-5 text-center">4</div>
+        <div class="bg-[green] py-5 text-center">5</div>
+        <div class="bg-[green] py-5 text-center">6</div>
+        <div class="bg-[green] py-5 text-center row-span-3">7</div>
+        <div class="bg-[green] py-5 text-center row-start-1 row-end-3">8</div>
+        <div class="bg-[green] py-5 text-center row-start-1 row-end-2">9</div>
+      
+      </div>
+
+
+      <!-- grid spannig row-->
+<div class="outer-box">
+  <div class="inner-box py-2"></div>
+</div>
+      <div class="max-w-[1320px] grid lg:grid-cols-19 mx-auto  grid-flow-col gap-3 text-white"><!--row=4 divide into 4 rows-->
+        <div class="bg-[black] py-2 text-center one ">ESC</div>
+        <div class="bg-[black] py-2 text-center one">F1</div>
+        <div class="bg-[black] py-2 text-center one">F2</div><!--takes length equal to 2 rows-->
+        <div class="bg-[black] py-2 text-center one">F3</div>
+        <div class="bg-[black] py-2 text-center one">F4</div>
+        <div class="bg-[black] py-2 text-center one">F5</div>
+        <div class="bg-[black] py-2 text-center  one">F6</div>
+        <div class="bg-[black] py-2 text-center one">F7</div>
+        <div class="bg-[black] py-2 text-center one">F8</div>
+        <div class="bg-[black] py-2 text-center one">F9</div>
+        <div class="bg-[black] py-2 text-center one">F10</div>
+        <div class="bg-[black] py-2 text-center one">F11</div>
+        <div class="bg-[black] py-2 text-center one">F12</div>
+        <div class="bg-[black] py-2 text-center one">PRT SC</div>
+        <div class="bg-[black] py-2 text-center one">DELETE</div>
+        <div class="bg-[black] py-2 text-center one">HOME</div>
+        <div class="bg-[black] py-2 text-center one">END</div>
+        <div class="bg-[black] py-2 text-center one">PG UP</div>
+        <div class="bg-[black] py-2 text-center one">PG ON</div>
+        
+      </div>
+
+
+       <!-- pdding class -->
+
+       <div class="max-w-[1300px] mx-auto bg-purple text-white p-4">
+        <h1>Padding class</h1>
+       </div>
+
+       <!-- margin -->
+       <div>
+        <div class="max-w-[1300px]  bg-purple text-white m-4 mt-5">
+          <h1>margin class</h1>
+         </div>
+       </div>
 </body>
 
 </html>
